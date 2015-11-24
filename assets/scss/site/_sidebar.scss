@@ -1,0 +1,104 @@
+#site_sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 80px 0 15px;
+    width: 280px;
+    min-height: 100vh;
+    background-color: $sidebar-bg;
+    border-right: solid 2px lighten($sidebar-bg, 50%);
+    color: $sidebar-color;
+    @include font-size(0.875);
+}
+
+#sidebar_nav{
+    >ul{
+        border-bottom: solid 1px lighten($sidebar-bg, 5%);
+        >li{
+            border-top: solid 1px lighten($sidebar-bg, 5%);
+        }
+    }
+    ul{
+        @extend .ul-untyled;
+        a{
+            display: block;
+            padding: 10px 15px;
+            color: $sidebar-color;
+            line-height: 25px;
+            text-decoration: none;
+        }
+        .nav-item{
+            position: relative;
+            a{
+                @include transition(all 0.3s);
+                &:hover, &:focus{
+                    background-color: darken($sidebar-bg, 4%);
+                }
+            }
+            &.active{
+                background-color: darken($sidebar-bg, 7%);
+                &:before{
+                    content: " ";
+                    position: absolute;
+                    height: 100%;
+                    border-left: solid 4px lighten($sidebar-bg, 40%);
+                }
+            }
+            .nav-icon{
+                display: inline-block;
+                width: 25px;
+                @include font-size(1.125);
+                text-align: center;
+                vertical-align: bottom;
+            }
+            .nav-arrow:before{
+                @include fa();
+                content: "\f104";
+                float: right;
+                line-height: inherit;
+                margin-top: 1px;
+            }
+        }
+        &.sub-nav{
+            display: none;
+            background-color: darken($sidebar-bg,2%);
+            a{
+                padding-left: 30px;
+            }
+        }
+        .nav-item.open{
+            ul.sub-nav{
+                display: block;
+            }
+            >a{
+                background-color: darken($sidebar-bg,4%);
+                .nav-arrow:before{
+                    @include rotate(-90deg);
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 767px){
+    #site_sidebar{
+        left: -280px;
+        padding-top: 20px;
+        z-index: 1040;
+        transition: (all 0.3s);
+    }
+    .open-sidebar-left{
+        #site_sidebar{
+            left: 0;
+        }
+        #sidebar_overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.3);
+            z-index: 1035;
+        }
+    }
+}

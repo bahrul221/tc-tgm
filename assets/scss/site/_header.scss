@@ -1,0 +1,64 @@
+
+#site_navbar.navbar{
+    min-height: $header-height;
+    border-radius: 0;
+    background-color: $header-bg;
+    border-color: $header-border;
+    @include material-shadow(1);
+    .navbar-brand{
+        // 20 is line-height
+        padding-top: ($header-height - 20)/2;
+        padding-bottom: ($header-height - 20)/2;
+    }
+    .navbar-brand-img{
+        padding-top: ($header-height - 50)/2;
+        padding-bottom: ($header-height - 50)/2;
+        img{
+            max-height: 50px;
+        }
+    }
+    .navbar-toggle{
+        border: none;
+    }
+}
+
+#nav_user{
+    >li>a.dropdown-toggle{
+        padding-top: ($header-height - 50)/2;
+        padding-bottom: ($header-height - 50)/2;
+        line-height: 50px;
+        @include font-size(0.875);
+        color: $usernav-color;
+        @extend .sbold;
+    }
+}
+
+#site_navbar{
+    #nav_user{
+        >.open>a, >.open>a:focus, >.open>a:hover{
+            background-color: transparent;
+        }
+    }
+    .nav-user-avatar{
+        @include square(40px);
+        border-radius: 50%;
+        margin-left: 5px;
+        border: solid 2px #FFF;
+    }
+    .navbar-toggle{
+        &:hover, &:focus{
+            background-color: transparent;
+        }
+    }
+}
+
+#toggle_sidebar_left{
+    margin-top: ($header-height - 32)/2;
+    margin-bottom: ($header-height - 32)/2;
+}
+#toggle_sidebar_right{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: ($header-height - 40)/2;
+    padding-bottom: ($header-height - 40)/2;
+}

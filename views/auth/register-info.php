@@ -1,0 +1,45 @@
+<?php
+
+use App\View\View; ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title><?php echo View::get( 'title' ); ?></title>
+
+        <!--main css-->
+        <?php echo View::getCSS(); ?>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body style="padding-top: 20px;">
+        
+        <div class="container">
+            <img src="assets/img/logo.png" style="margin-bottom: 20px;">
+            <div class="well" style="font-size: 16px;">
+                <h3 style="margin-top: 10px;">Selamat Bergabung !</h3>
+                <p>
+                    Untuk mengaktifkan akun Anda, silahkan lakukan konfirmasi melalui email yang kami kirimkan ke alamat email Anda.
+                </p>
+                <p>
+                    Tidak menerima email konfirmasi? <a href="#">Kirim Ulang</a>
+                </p>
+                
+            </div>
+        </div>
+
+
+        <?php echo View::getJS(); ?>
+    </body>
+</html>
+
+

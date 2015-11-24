@@ -1,0 +1,44 @@
+.table-profile{
+    tbody{
+        tr{
+            td:last-child{
+                @include font-size(1);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.user-info-panel{
+    .number-info{
+        @include font-size(1);
+        font-weight: 600;
+        .value{
+            @include font-size(2);
+        }
+    }
+}
+
+.badge-level-wrap{
+    .badge{
+        background-color: $cm-grey-200;
+        color: $cm-grey-400;
+        @include font-size(1);
+        font-weight: 600;
+        padding: 8px 10px;
+        border-radius: 6px;
+        margin: 0 3px 6px;
+    }
+    .badge-td, .badge-cgt, .badge-ccgt{
+        color: #FFF;
+    }
+    .badge-td{
+        background-color: $badge-td;
+    }
+    .badge-cgt{
+        background-color: $badge-cgt;
+    }
+    .badge-ccgt{
+        background-color: $badge-ccgt;
+    }
+}

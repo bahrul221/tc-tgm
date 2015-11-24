@@ -1,0 +1,33 @@
+.panel-section{
+    padding: 5px 20px;
+    border: none;
+    @include material-shadow(1);
+    .panel-heading{
+        background-color: transparent;
+        border-color: $panel-section-line;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        .panel-title{
+            display: inline-block;
+            color: $panel-section-title-color;
+            @include font-size(1);
+            font-weight: bold;
+            .panel-icon{
+                @include font-size(1.25);
+                margin-right: 5px;
+            }
+        }
+    }
+    .panel-footer{
+        background-color: transparent;
+        border-color: $panel-section-line;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .panel-body{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
